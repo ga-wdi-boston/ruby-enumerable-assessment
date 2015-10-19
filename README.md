@@ -12,6 +12,6 @@ Follow the prompts in `lib/assessment.rb` and complete each question.  You may u
 
 **Unless explicilty disallowed, you may use any method or feature ruby provides to complete the prompts.**
 
-Check your answers by running `grunt test`.  Check your code by running `grunt nag`. You can reformat your code with `grunt reformat`.
+Check your answers by running `rspec`.
 
 When you are done, commit, push your changes, and submit a pull request.
