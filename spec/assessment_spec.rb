@@ -23,7 +23,7 @@ RSpec.describe Assessment do
       expect(@response.sum(1..99)).to eq(4950)
     end
     it 'returns 75 for first seven prime numbers' do
-      expect(@response.sum(1..99)).to eq(75)
+      expect(@response.sum([3, 5, 7, 11, 13, 17, 19])).to eq(75)
     end
     it 'returns CUSA preamble for `data/cusa-preamble.txt`' do
       expect(@response.sum(File.open('data/cusa-preamble.txt'))).to eq(cusa_preamble)
@@ -47,7 +47,7 @@ RSpec.describe Assessment do
       expect(@response.some_odd([2, 3, 4, 6])).to eq(true)
     end
     it 'returns true when passed 2..6' do
-      expect(@response.every_even(2..6)).to eq(true)
+      expect(@response.some_odd(2..6)).to eq(true)
     end
   end
 
@@ -71,22 +71,22 @@ RSpec.describe Assessment do
 
   context 'transform method' do
     it 'returns %w(All Caps Now) when passed %w(all Caps Now)' do
-      expect(@response.every_even(%w(all Caps Now))).to eq(%w(All Caps Now))
+      expect(@response.transform(%w(all Caps Now))).to eq(%w(All Caps Now))
     end
   end
 
   context 'transform method' do
     it 'returns %w(All Caps Now) when passed %w(all Caps Now)' do
-      expect(@response.every_even(%w(all Caps Now))).to eq(%w(All Caps Now))
+      expect(@response.transform(%w(all Caps Now))).to eq(%w(All Caps Now))
     end
   end
 
   context 'read_file' do
     it 'returns CUSA preamble for `data/cusa-preamble.txt`' do
-      expect(@response.sum('data/cusa-preamble.txt')).to eq(doi_preamble.tr("\n", ' '))
+      expect(@response.read_file('data/cusa-preamble.txt')).to eq(cusa_preamble.tr("\n", ' ').chop)
     end
     it 'returns DOI preamble for `data/doi-preamble.txt`' do
-      expect(@response.sum('data/doi-preamble.txt')).to eq(doi_preamble.tr("\n", ' '))
+      expect(@response.read_file('data/doi-preamble.txt')).to eq(doi_preamble.tr("\n", ' ').chop)
     end
   end
 end
