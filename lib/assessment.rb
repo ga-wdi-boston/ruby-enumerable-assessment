@@ -1,5 +1,7 @@
 # Ruby enumerable assessment
 class Assessment
+
+  test = [1,2,3,4,5]
   # Question 1
   # Write ruby code to return the longest entry in the
   # enumerable supplied.  Assume each entry implements a length
@@ -14,6 +16,7 @@ class Assessment
   # Assume each entry implements a `+` method
   def sum(enum)
     # Your code goes here
+    enum.reduce(&:+)
   end
 
   # Question 3
