@@ -5,7 +5,10 @@ class Assessment
   # enumerable supplied.  Assume each entry implements a length
   # method that returns a Fixnum.
   def longest(enum)
-    # Your code goes here
+    longest = %w{ cat sheep bear }.inject do |memo, word|
+    memo.length > word.length ? memo : word
+    end
+    longest
   end
 
   # Question 2
@@ -13,28 +16,31 @@ class Assessment
   # enumerable supplied (i.e. apply the `+` operator)
   # Assume each entry implements a `+` method
   def sum(enum)
-    # Your code goes here
+    (5..10).inject { |sum, n| sum + n }
   end
 
   # Question 3
   # Write ruby code that returns true if some of the entries
   # in the numbers enumerable are odd
   def some_odd(numbers)
-    # Your code goes here
-  end
+    a = [7, 5, 9, 2, 0, 7, 9, 4, 2, 0]
+    p a.slice_when {|i, j| i.even? != j.even? }.to_a
+
+    end
 
   # Question 4
   # Write ruby code that returns true if every entry in the
   # numbers enumerable are even
-  def every_even(numbers)
-    # Your code goes here
-  end
+    [1,2,3,4,5].select { |num|  num.even?  }
+
+
 
   # Question 5
   # Write ruby code that returns an array with all of the
   # entries from the words enumerable capitalized.
   def transform(words)
-    # Your code goes here
+
+
   end
 
   # Question 6
