@@ -5,7 +5,10 @@ class Assessment
   # enumerable supplied.  Assume each entry implements a length
   # method that returns a Fixnum.
   def longest(enum)
-    # Your code goes here
+
+    ar = ['one','two','three','four','five']
+    ar.max_by(&:length)
+
   end
 
   # Question 2
@@ -13,28 +16,37 @@ class Assessment
   # enumerable supplied (i.e. apply the `+` operator)
   # Assume each entry implements a `+` method
   def sum(enum)
-    # Your code goes here
+
+    array.each { |a| sum += a }
+
   end
 
   # Question 3
   # Write ruby code that returns true if some of the entries
   # in the numbers enumerable are odd
   def some_odd(numbers)
-    # Your code goes here
+
+    self.values_at(* self.each_index.select {|i| i.odd?})
+
   end
 
   # Question 4
   # Write ruby code that returns true if every entry in the
   # numbers enumerable are even
   def every_even(numbers)
-    # Your code goes here
+
+    self.values_at(* self.each_index.select {|i| i.even?})
+
   end
 
   # Question 5
   # Write ruby code that returns an array with all of the
   # entries from the words enumerable capitalized.
   def transform(words)
-    # Your code goes here
+
+    array = []
+    array.map!(&:capitalized)
+
   end
 
   # Question 6
