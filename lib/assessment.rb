@@ -5,7 +5,7 @@ class Assessment
   # enumerable supplied.  Assume each entry implements a length
   # method that returns a Fixnum.
   def longest(enum)
-    # Your code goes here
+     enum.max { |a, b| a.length <=> b.length}
   end
 
   # Question 2
@@ -20,21 +20,21 @@ class Assessment
   # Write ruby code that returns true if some of the entries
   # in the numbers enumerable are odd
   def some_odd(numbers)
-    # Your code goes here
+    odd?
   end
 
   # Question 4
   # Write ruby code that returns true if every entry in the
   # numbers enumerable are even
   def every_even(numbers)
-    # Your code goes here
+    even?
   end
 
   # Question 5
   # Write ruby code that returns an array with all of the
   # entries from the words enumerable capitalized.
   def transform(words)
-    # Your code goes here
+   words.length.upcase
   end
 
   # Question 6
@@ -46,3 +46,4 @@ class Assessment
     # Your code goes here
   end
 end
+
