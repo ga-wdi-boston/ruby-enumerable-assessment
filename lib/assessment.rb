@@ -5,7 +5,12 @@ class Assessment
   # enumerable supplied.  Assume each entry implements a length
   # method that returns a Fixnum.
   def longest(enum)
-    # Your code goes here
+    enum.reduce do |item, memo|
+      if memo.to_s.length > item.to_s.length
+        longest = memo
+      else longest = item
+      end
+    end
   end
 
   # Question 2
@@ -13,28 +18,29 @@ class Assessment
   # enumerable supplied (i.e. apply the `+` operator)
   # Assume each entry implements a `+` method
   def sum(enum)
-    # Your code goes here
+    enum.reduce do |item, memo|
+      memo += item
   end
 
   # Question 3
   # Write ruby code that returns true if some of the entries
   # in the numbers enumerable are odd
   def some_odd(numbers)
-    # Your code goes here
+    numbers.any?{|x| x.odd?}
   end
 
   # Question 4
   # Write ruby code that returns true if every entry in the
   # numbers enumerable are even
   def every_even(numbers)
-    # Your code goes here
+    numbers.all?{|x| x.even?}
   end
 
   # Question 5
   # Write ruby code that returns an array with all of the
   # entries from the words enumerable capitalized.
   def transform(words)
-    # Your code goes here
+    words.map{|x| x.upcase)
   end
 
   # Question 6
@@ -43,6 +49,7 @@ class Assessment
   # replacing the trailing newline character with a
   # space and return the result.
   def read_file(filename)
-    # Your code goes here
+    File.open(filename) do |file|
+      file.gsub(/"\n"/, ' ').each_with_object([]){|i, a| i << a}
   end
 end
