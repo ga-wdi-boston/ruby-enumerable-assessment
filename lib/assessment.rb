@@ -5,8 +5,11 @@ class Assessment
   # enumerable supplied.  Assume each entry implements a length
   # method that returns a Fixnum.
   def longest(enum)
-    # Your code goes here
+    group_by(&:size).max.last
   end
+end
+
+
 
   # Question 2
   # Write ruby code to return the sum of entries in the
@@ -20,21 +23,24 @@ class Assessment
   # Write ruby code that returns true if some of the entries
   # in the numbers enumerable are odd
   def some_odd(numbers)
-    # Your code goes here
+    if numbers == odd?
+      return true
   end
+    end
+
 
   # Question 4
   # Write ruby code that returns true if every entry in the
   # numbers enumerable are even
   def every_even(numbers)
-    # Your code goes here
+    my_array.select{|item| item%2==0 }
   end
 
   # Question 5
   # Write ruby code that returns an array with all of the
   # entries from the words enumerable capitalized.
   def transform(words)
-    # Your code goes here
+    array.map(&:upcase)
   end
 
   # Question 6
