@@ -21,7 +21,6 @@ class Assessment
   # in the numbers enumerable are odd
   def some_odd(numbers)
     numbers.any? { |x| x.odd? }
-    true
   end
 
   # Question 4
@@ -29,15 +28,17 @@ class Assessment
   # numbers enumerable are even
   def every_even(numbers)
     numbers.all? { |x| x.even? }
-    true
   end
 
   # Question 5
   # Write ruby code that returns an array with all of the
   # entries from the words enumerable capitalized.
   def transform(words)
-    words.capitalized { |words| }
+    words.map(&:capitalize)
   end
+
+  # the reason why we can use the &:capitalize after words.map is
+  # because it operates the same was as words.map { |w| w.capitalize }
 
   # Question 6
   # Write ruby code to read each line from the file
@@ -45,6 +46,14 @@ class Assessment
   # replacing the trailing newline character with a
   # space and return the result.
   def read_file(filename)
-    # Your code goes here
+    File.open(filename).reduce(' ') { |a, e| a << e.chomp + ' ' }.strip
   end
 end
+
+# admittedly I needed some help with this one but here is my understanding:
+# We use File.open and then pass it the filename from the perameters
+# then use reduce to combine all the elements of the file and then use reduce
+# and pass it an initial value of '' and pass the perameters a and e
+# we then use the << to append the argument we get from e.chomp and adding
+# an empty string to seperate the words
+# we end by using strip to remove all trailing and leading whitespace
