@@ -19,7 +19,7 @@ class Assessment
 
   # correct syntax here, implicit return statement
   def sum(enum)
-    enum.reduce (memo, f) { memo + f }
+    enum.reduce {|memo, f|  memo + f }
   end
 
   # Question 3
@@ -63,10 +63,19 @@ class Assessment
   # space and return the result.
   def read_file(filename)
     File.open(filename) do |file|
-      line_no_newline = file.each_with_object(Hash.new('')) do |line, memo|
-        memo[:lines] += line.gsub!(/"\n/, " ")
+      # create an empty array to hold the lines
+      lines_array = []
+      # use the .each_line method to iterate
+      # over the lines in a file
+      file.each_line do |line|
+        # shovel each modified line into the array
+        lines_array << line.gsub(/\n/, ' ')
       end
+      # join all the array items together
+      lines_str = lines_array.join('')
+      # remove the last empty space at the end of the paragraph
+      lines_str.rstrip!
     end
-    print "The concatenated line is: ", line_no_newline[:lines]
   end
+
 end
