@@ -14,13 +14,15 @@ class Assessment
   # Assume each entry implements a `+` method
   def sum(enum)
     # Your code goes here
-    enum.reduce { |memo, index| memo + index}
+    # enum.reduce { |memo, index| memo + index}
+    enum.reduce(&:+)
 end
   # Question 3
   # Write ruby code that returns true if some of the entries
   # in the numbers enumerable are odd
   def some_odd(numbers)
-    numbers.any? {|index| index.odd?}
+    # numbers.any? {|index| index.odd?}
+    numbers.any?(&:odd?)
   end
 
   # Question 4
@@ -28,7 +30,8 @@ end
   # numbers enumerable are even
   def every_even(numbers)
     # Your code goes here
-    numbers.all? { |index| index.even?}
+    # numbers.all? { |index| index.even?}
+    numbers.all?(&:even?)
   end
 
   # Question 5
@@ -36,7 +39,7 @@ end
   # entries from the words enumerable capitalized.
   def transform(words)
     # Your code goes here
-    words.upcase.to_a
+    words.map(&:capitalize)
   end
 
   # Question 6
@@ -46,5 +49,9 @@ end
   # space and return the result.
   def read_file(filename)
     # Your code goes here
+    new_lines = File.open(filename).each_with_object('') do |lines, el|
+      el << lines.chomp! + ' '
+    end
+    new_lines.strip
   end
 end
