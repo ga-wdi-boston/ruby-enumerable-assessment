@@ -14,33 +14,35 @@ class Assessment
   #(i.e. apply the `+` operator)
   # Assume each entry implements a `+` method
   def sum(enum)
-# What enumerable supplied? Is there something we should actually be working off of?
-  enum.sum #or use the inject method?
+    enum.reduce { |memo, el| memo + el } # .reduce combines all elements of enum and applies a binary operator
   end
+  # source used http://ruby-doc.org/core-2.2.3/Enumerable.html#method-i-reduce
 
   # Question 3
   # Write ruby code that returns true if some of the entries
   # in the numbers enumerable are odd
   def some_odd(numbers)
-    !numbers.any? &block
+    numbers.any (&:odd?) # .any will return true if min 1 of the elents is true.
   end
-  print numbers
+  # source used http://apidock.com/ruby/Enumerable/any%3F
 
   # Question 4
   # Write ruby code that returns true if every entry in the
   # numbers enumerable are even
   def every_even(numbers)
-    numbers.all? &block
+    numbers.all? { |numbers| numbers } # .all? method will be true if the block does not return any falses.
   end
-  print numbers
+  # source used http://ruby-doc.org/core-2.2.3/Enumerable.html
 
   # Question 5
   # Write ruby code that returns an array with all of the
   # entries from the words enumerable capitalized.
   def transform(words)
-    words.capitalized
+    array = ['a', 'b', 'c']
+    array.map!(&:upcase) #.map! returns an array with the method we pass through the ( )
   end
-  print words
+
+  # source used http://www.brianstorti.com/understanding-ruby-idiom-map-with-symbol/
 
   # Question 6
   # Write ruby code to read each line from the file
@@ -48,8 +50,8 @@ class Assessment
   # replacing the trailing newline character with a
   # space and return the result.
   def read_file(filename)
-    file.open("filename.txt") {|f| f.readline}
-    filename.gsub(/\n/, ' ') # replaces newline with a space
-    print filename
+    File.open(filename).each do |line memo|
+      memo << line.chomp + ''
+    end
   end
 end
