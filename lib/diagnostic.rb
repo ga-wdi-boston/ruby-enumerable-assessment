@@ -32,7 +32,7 @@ class Diagnostic
 
   # Question 5
   # Write ruby code that returns an array with all of the
-  # entries from the words enumerable capitalized.
+  # entries from the words enumerable capitalized (i.e. 'foo' becomes 'Foo').
   def transform(words)
     # Your code goes here
   end
