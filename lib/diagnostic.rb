@@ -1,5 +1,5 @@
-# Ruby enumerable assessment
-class Assessment
+# Ruby enumerable diagnostic
+class Diagnostic
   # Question 1
   # Write ruby code to return the longest entry in the
   # enumerable supplied.  Assume each entry implements a length

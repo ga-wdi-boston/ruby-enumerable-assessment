@@ -1,10 +1,10 @@
-require_relative '../lib/assessment.rb'
-RSpec.describe Assessment do
+require_relative '../lib/diagnostic.rb'
+RSpec.describe Diagnostic do
   cusa_preamble = "We the People of the United States, in Order to form a more\nperfect Union, establish Justice, insure domestic\nTranquility, provide for the common defence, promote the\ngeneral Welfare, and secure the Blessings of Liberty to\nourselves and our Posterity, do ordain and establish this\nConstitution for the United States of America.\n"
   doi_preamble = "When in the Course of human events, it becomes necessary for\none people to dissolve the political bands which have\nconnected them with another, and to assume among the powers\nof the earth, the separate and equal station to which the\nLaws of Nature and of Nature's God entitle them, a decent\nrespect to the opinions of mankind requires that they should\ndeclare the causes which impel them to the separation.\n"
 
   before(:example) do
-    @response = Assessment.new
+    @response = Diagnostic.new
   end
 
   context 'longest method' do
