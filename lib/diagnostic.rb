@@ -13,7 +13,7 @@ class Diagnostic
   # enumerable supplied (i.e. apply the `+` operator)
   # Assume each entry implements a `+` method
   def sum(enum)
-    enum.reduce {|sum, n| :+}
+    enum.reduce(:+)
   end
 
   # Question 3
@@ -43,7 +43,7 @@ class Diagnostic
   # replacing the trailing newline character with a
   # space and return the result.
   def read_file(filename)
-    file = File.new(filename)
-    file.reduce {|memo, line| memo = line.sub(\n, )}
+    # file = File.new(filename)
+    # file.reduce {|memo, line| memo = line.sub(\n, )}
   end
 end
