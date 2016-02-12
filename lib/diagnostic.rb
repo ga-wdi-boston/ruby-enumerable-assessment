@@ -5,36 +5,40 @@ class Diagnostic
   # enumerable supplied.  Assume each entry implements a length
   # method that returns a Fixnum.
   def longest(enum)
-    # Your code goes here
+    enum.max
   end
+  # Jason Liang's Comment:
+  # I wanted to write enum.max.length but each entry
+  # implements a length method.
+
 
   # Question 2
   # Write ruby code to return the sum of entries in the
   # enumerable supplied (i.e. apply the `+` operator)
   # Assume each entry implements a `+` method
   def sum(enum)
-    # Your code goes here
+    enum.reduce(:+)
   end
 
   # Question 3
   # Write ruby code that returns true if some of the entries
   # in the numbers enumerable are odd
   def some_odd(numbers)
-    # Your code goes here
+    enum.any?{ |x| x.odd? }
   end
 
   # Question 4
   # Write ruby code that returns true if every entry in the
   # numbers enumerable are even
   def every_even(numbers)
-    # Your code goes here
+    enum.all?{ |x| x.even? }
   end
 
   # Question 5
   # Write ruby code that returns an array with all of the
   # entries from the words enumerable capitalized (i.e. 'foo' becomes 'Foo').
   def transform(words)
-    # Your code goes here
+    enum.map{ |x| x.capitalize }
   end
 
   # Question 6
@@ -43,6 +47,14 @@ class Diagnostic
   # replacing the trailing newline character with a
   # space and return the result.
   def read_file(filename)
-    # Your code goes here
+    lines = File.open(ARGV[0]) do |file|
+      file.map(&:itself)
+    end
+    puts lines
   end
 end
+
+# Jason Liang's comments:
+# I copied this directly from the training yesterday
+# This is subject quite unknown to me
+# can you clarify what ARGV[0] means?
