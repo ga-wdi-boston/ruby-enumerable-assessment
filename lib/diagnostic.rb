@@ -6,6 +6,10 @@ class Diagnostic
   # method that returns a Fixnum.
   def longest(enum)
     # Your code goes here
+    longest = enum.reduce do |memo, obj|
+      memo.length > obj.length ? memo : obj
+    end
+    p longest
   end
 
   # Question 2
@@ -14,6 +18,8 @@ class Diagnostic
   # Assume each entry implements a `+` method
   def sum(enum)
     # Your code goes here
+    total = enum.reduce(:+)
+    p total
   end
 
   # Question 3
@@ -21,20 +27,26 @@ class Diagnostic
   # in the numbers enumerable are odd
   def some_odd(numbers)
     # Your code goes here
+   numbers.one? { |num| num.odd? }
   end
 
   # Question 4
   # Write ruby code that returns true if every entry in the
   # numbers enumerable are even
   def every_even(numbers)
-    # Your code goes here
+    evens = numbers.all { |num| num.even? }
+    puts evens
   end
 
   # Question 5
   # Write ruby code that returns an array with all of the
   # entries from the words enumerable capitalized (i.e. 'foo' becomes 'Foo').
   def transform(words)
-    # Your code goes here
+    lines = filename.open(ARGV[0]) do |file|
+      file.map(&:itself).capitalize
+    end
+
+    print lines
   end
 
   # Question 6
@@ -43,6 +55,9 @@ class Diagnostic
   # replacing the trailing newline character with a
   # space and return the result.
   def read_file(filename)
-    # Your code goes here
-  end
+    lines = filename.open(ARGV[0]) do |file|
+      file.map(&:itself)
+    end
+
+  print lines
 end
