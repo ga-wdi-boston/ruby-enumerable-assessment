@@ -19,7 +19,7 @@ This includes referencing talk materials, appropriate documentation, and
 **Unless explicitly disallowed, you may use any method or feature ruby provides
  to complete the prompts.**
 
-Check your answers by running `rspec`.
+Check your answers by running `rake test`.
 
 When you are done, commit, push your changes, and submit a pull request.
 
