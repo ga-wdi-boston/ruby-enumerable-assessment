@@ -8,11 +8,16 @@ You have 30 minutes
 
 Fork, clone, branch (response), and bundle install.
 
-Follow the prompts in `lib/diagnostic.rb` and complete each question.  You may use any resource, other than someone else in the classroom, to help you complete this diagnostic.
+Follow the prompts in `lib/diagnostic.rb` and complete each question.
+You may use any resource, other than someone else in the classroom, to help you
+ complete this diagnostic.
 
-You may use any resource other than each other to complete this diagnostic. This includes referencing talk materials, appropriate documentation, and searching for help online.
+You may use any resource other than each other to complete this diagnostic.
+This includes referencing talk materials, appropriate documentation, and
+ searching for help online.
 
-**Unless explicitly disallowed, you may use any method or feature ruby provides to complete the prompts.**
+**Unless explicitly disallowed, you may use any method or feature ruby provides
+ to complete the prompts.**
 
 Check your answers by running `rspec`.
 
