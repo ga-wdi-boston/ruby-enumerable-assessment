@@ -51,6 +51,6 @@ class Diagnostic
         contents += line.tr("\n", ' ')
       end
     end
-    contents
+    contents.chop
   end
 end
