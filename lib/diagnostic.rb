@@ -29,7 +29,7 @@ class Diagnostic
   # Write ruby code that returns true if every entry in the
   # list of numbers are even
   def every_even(numbers)
-    # Your code goes here
+    numbers.all?(&:even?)
   end
 
   # Question 5
