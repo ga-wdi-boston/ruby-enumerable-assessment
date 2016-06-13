@@ -4,13 +4,9 @@
 
 ## Prerequisites
 
--   Topics with which developers should be familiar with.
--   Prerequisites are "just-in-time", so if I have a prerequisite that mentions
-    Sass, I would **not** need to include CSS as a prerequisite.
--   [Links to previous materials](https://www.github.com/ga-wdi-boston/example)
-    are often useful.
--   In a diagnostic, it is useful to link to reference material, such as talk
-    repositories.
+-   [ga-wdi-boston/ruby-enumerable-builtins](https://github.com/ga-wdi-boston/ruby-enumerable-builtins)
+-   [ga-wdi-boston/ruby-enumerable-io](https://github.com/ga-wdi-boston/ruby-enumerable-io)
+-   [ga-wdi-boston/ruby-enumerable-custom](https://github.com/ga-wdi-boston/ruby-enumerable-custom)
 
 ## Instructions
 
