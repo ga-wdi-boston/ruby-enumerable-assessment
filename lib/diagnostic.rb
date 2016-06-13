@@ -12,7 +12,7 @@ class Diagnostic
   # Question 2
   # Write ruby code to return the sum of entries in the
   # list supplied (i.e. apply the `+` operator).
-  # Assume each entry implements a `+` method.
+  # Assume each entry implements  a `+` method.
   def sum(list)
     # Your code goes here
     sum = 0
@@ -27,7 +27,8 @@ class Diagnostic
    numbers.any? { |x| x.to_i % 2 != 0}
   end
 
-  # Question 4
+
+  # Question 4d
   # Write ruby code that returns true if every entry in the
   # list of numbers are even
   def every_even(numbers)
