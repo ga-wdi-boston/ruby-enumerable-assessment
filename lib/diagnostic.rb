@@ -5,7 +5,9 @@ class Diagnostic
   # Assume each entry in the list implements a length method that returns
   # a Fixnum.
   def longest(list)
-    # Your code goes here
+    lengths = []
+    list.each { |element| lengths.push(element.length) }
+    list[lengths.index(lengths.max)]
   end
 
   # Question 2
