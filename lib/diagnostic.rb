@@ -15,7 +15,7 @@ class Diagnostic
   # list supplied (i.e. apply the `+` operator).
   # Assume each entry implements a `+` method.
   def sum(list)
-    # Your code goes here
+    list.reduce(:+)
   end
 
   # Question 3
