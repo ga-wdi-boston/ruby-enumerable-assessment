@@ -5,6 +5,7 @@ class Diagnostic
   # Assume each entry in the list implements a length method that returns
   # a Fixnum.
   def longest(list)
+    list.max_by{ &:length }
     # Your code goes here
   end
 
@@ -13,6 +14,7 @@ class Diagnostic
   # list supplied (i.e. apply the `+` operator).
   # Assume each entry implements a `+` method.
   def sum(list)
+    list.reduce (:+)
     # Your code goes here
   end
 
@@ -20,6 +22,7 @@ class Diagnostic
   # Write ruby code that returns true if some of the entries
   # in the list of numbers are odd
   def some_odd(numbers)
+    numbers.any?{ |number| number.odd? }
     # Your code goes here
   end
 
@@ -27,6 +30,7 @@ class Diagnostic
   # Write ruby code that returns true if every entry in the
   # list of numbers are even
   def every_even(numbers)
+    numbers.all? { |number| number.even?}
     # Your code goes here
   end
 
@@ -34,6 +38,7 @@ class Diagnostic
   # Write ruby code that returns an array with all of the
   # entries from the list of words capitalized (i.e. 'foo' becomes 'Foo').
   def transform(words)
+    words.each { |word| word.capitalize }
     # Your code goes here
   end
 
@@ -44,5 +49,6 @@ class Diagnostic
   # space and return the result.
   def read_file(filename)
     # Your code goes here
+    filename.foreach ('filename.csv') do |line| puts line += " "
   end
 end
