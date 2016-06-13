@@ -43,6 +43,10 @@ class Diagnostic
   # replacing the trailing newline character with a
   # space and return the result.
   def read_file(filename)
-    # Your code goes here
+    CSV.foreach('filename.csv',
+                headers: true,
+                header_converters: -> (h) { h.downcase.to_sym }) do |filename_row|
+          #{|filename_row| filename_row + " "}
+          #{|row_a, row_b| row_a + row_b}
   end
 end
