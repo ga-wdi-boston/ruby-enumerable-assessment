@@ -43,6 +43,10 @@ class Diagnostic
   # replacing the trailing newline character with a
   # space and return the result.
   def read_file(filename)
-    # Your code goes here
+    File.open(filename) do |file|
+      file.each do |line|
+        line.chomp('').#something
+      end
+    end
   end
 end
