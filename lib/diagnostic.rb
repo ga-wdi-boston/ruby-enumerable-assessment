@@ -36,7 +36,7 @@ class Diagnostic
   # Write ruby code that returns an array with all of the
   # entries from the list of words capitalized (i.e. 'foo' becomes 'Foo').
   def transform(words)
-    # Your code goes here
+    words.map { |word| word[0].upcase + word.slice(1, word.length - 1) }
   end
 
   # Question 6
