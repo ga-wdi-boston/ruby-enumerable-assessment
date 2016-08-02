@@ -1,10 +1,26 @@
 require_relative '../lib/diagnostic.rb'
-RSpec.describe Diagnostic do
-  cusa_preamble = "We the People of the United States, in Order to form a more\nperfect Union, establish Justice, insure domestic\nTranquility, provide for the common defence, promote the\ngeneral Welfare, and secure the Blessings of Liberty to\nourselves and our Posterity, do ordain and establish this\nConstitution for the United States of America.\n"
-  doi_preamble = "When in the Course of human events, it becomes necessary for\none people to dissolve the political bands which have\nconnected them with another, and to assume among the powers\nof the earth, the separate and equal station to which the\nLaws of Nature and of Nature's God entitle them, a decent\nrespect to the opinions of mankind requires that they should\ndeclare the causes which impel them to the separation.\n"
+RSpec.describe Assessment do
+  cusa_preamble = <<-PREAMBLE
+We the People of the United States, in Order to form a more
+perfect Union, establish Justice, insure domestic
+Tranquility, provide for the common defence, promote the
+general Welfare, and secure the Blessings of Liberty to
+ourselves and our Posterity, do ordain and establish this
+Constitution for the United States of America.
+  PREAMBLE
+
+  doi_preamble = <<-DOI
+When in the Course of human events, it becomes necessary for
+one people to dissolve the political bands which have
+connected them with another, and to assume among the powers
+of the earth, the separate and equal station to which the
+Laws of Nature and of Nature's God entitle them, a decent
+respect to the opinions of mankind requires that they should
+declare the causes which impel them to the separation.
+  DOI
 
   before(:example) do
-    @response = Diagnostic.new
+    @response = Assessment.new
   end
 
   context 'longest method' do
@@ -26,10 +42,12 @@ RSpec.describe Diagnostic do
       expect(@response.sum([3, 5, 7, 11, 13, 17, 19])).to eq(75)
     end
     it 'returns CUSA preamble for `data/cusa-preamble.txt`' do
-      expect(@response.sum(File.open('data/cusa-preamble.txt'))).to eq(cusa_preamble)
+      expect(@response.sum(File.open('data/cusa-preamble.txt'))).to\
+        eq(cusa_preamble)
     end
     it 'returns CUSA preamble for `data/cusa-preamble.txt`' do
-      expect(@response.sum(File.open('data/doi-preamble.txt'))).to eq(doi_preamble)
+      expect(@response.sum(File.open('data/doi-preamble.txt'))).to\
+        eq(doi_preamble)
     end
   end
 
@@ -83,10 +101,12 @@ RSpec.describe Diagnostic do
 
   context 'read_file' do
     it 'returns CUSA preamble for `data/cusa-preamble.txt`' do
-      expect(@response.read_file('data/cusa-preamble.txt')).to eq(cusa_preamble.tr("\n", ' ').chop)
+      expect(@response.read_file('data/cusa-preamble.txt')).to\
+        eq(cusa_preamble.tr("\n", ' ').chop)
     end
     it 'returns DOI preamble for `data/doi-preamble.txt`' do
-      expect(@response.read_file('data/doi-preamble.txt')).to eq(doi_preamble.tr("\n", ' ').chop)
+      expect(@response.read_file('data/doi-preamble.txt')).to\
+        eq(doi_preamble.tr("\n", ' ').chop)
     end
   end
 end
