@@ -1,5 +1,5 @@
 require_relative '../lib/diagnostic.rb'
-RSpec.describe Assessment do
+RSpec.describe Diagnostic do
   cusa_preamble = <<-PREAMBLE
 We the People of the United States, in Order to form a more
 perfect Union, establish Justice, insure domestic
@@ -20,7 +20,7 @@ declare the causes which impel them to the separation.
   DOI
 
   before(:example) do
-    @response = Assessment.new
+    @response = Diagnostic.new
   end
 
   context 'longest method' do
@@ -84,12 +84,6 @@ declare the causes which impel them to the separation.
     end
     it 'returns false when passed 2..6' do
       expect(@response.every_even(2..6)).to eq(false)
-    end
-  end
-
-  context 'transform method' do
-    it 'returns %w(All Caps Now) when passed %w(all Caps Now)' do
-      expect(@response.transform(%w(all Caps Now))).to eq(%w(All Caps Now))
     end
   end
 
