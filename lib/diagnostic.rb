@@ -5,7 +5,7 @@ class Diagnostic
   # Assume each entry in the list implements a length method that returns
   # a Fixnum.
   def longest(list)
-    # Your code goes here
+    list.max
   end
 
   # Question 2
@@ -13,36 +13,40 @@ class Diagnostic
   # list supplied (i.e. apply the `+` operator).
   # Assume each entry implements a `+` method.
   def sum(list)
-    # Your code goes here
+    list.reduce(0, &:+)
   end
 
   # Question 3
   # Write ruby code that returns true if some of the entries
   # in the list of numbers are odd
   def some_odd(numbers)
-    # Your code goes here
+    numbers.any?(&:odd?)
   end
 
   # Question 4
   # Write ruby code that returns true if every entry in the
   # list of numbers are even
   def every_even(numbers)
-    # Your code goes here
+    numbers.all?(&:even?)
   end
 
   # Question 5
   # Write ruby code that returns an array with all of the
   # entries from the list of words capitalized (i.e. 'foo' becomes 'Foo').
   def transform(words)
-    # Your code goes here
+    words.split.map(&:capitalize)
   end
 
   # Question 6
   # Write ruby code to read each line from the file
-  # named filename. Concatenate the lines together after
-  # replacing the trailing newline character with a
-  # space and return the result.
+  # named filename. Replace the trailing newline character with a space,
+  # concatenate the lines together, and return the result.
+
+  # Was not able to finish this one, hope I'm on the right track.
   def read_file(filename)
-    # Your code goes here
+    result = File.open(filename).each_line.strip do |file|
+      file += file
+    end
+    p result
   end
 end
