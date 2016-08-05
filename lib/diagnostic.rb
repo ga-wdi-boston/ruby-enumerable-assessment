@@ -12,29 +12,42 @@ class Diagnostic
   # Write ruby code to return the sum of entries in the
   # list supplied (i.e. apply the `+` operator).
   # Assume each entry implements a `+` method.
+
+  list = [1,2,3,4,5]
+
   def sum(list)
-    # Your code goes here
+    list.reduce(0) { |prev + curr| prev + curr }
+  end
+
+  OR
+
+  def sum(list)
+    list.reduce(:+)
   end
 
   # Question 3
   # Write ruby code that returns true if some of the entries
   # in the list of numbers are odd
   def some_odd(numbers)
-    # Your code goes here
+    if numbers.odd?
+      numbers.odd
+    end
   end
 
   # Question 4
   # Write ruby code that returns true if every entry in the
   # list of numbers are even
   def every_even(numbers)
-    # Your code goes here
+    if numbers.even?
+      numbers.even
+    end
   end
 
   # Question 5
   # Write ruby code that returns an array with all of the
   # entries from the list of words capitalized (i.e. 'foo' becomes 'Foo').
   def transform(words)
-    # Your code goes here
+    words.map { |word| word.capitalized }
   end
 
   # Question 6
@@ -43,6 +56,6 @@ class Diagnostic
   # replacing the trailing newline character with a
   # space and return the result.
   def read_file(filename)
-    # Your code goes here
+    File.open(filename)
   end
 end
