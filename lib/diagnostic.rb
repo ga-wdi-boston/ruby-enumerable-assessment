@@ -13,7 +13,7 @@ class Diagnostic
   # list supplied (i.e. apply the `+` operator).
   # Assume each entry implements a `+` method.
   def sum(list)
-    # Your code goes here
+    
   end
 
   # Question 3
@@ -27,7 +27,7 @@ class Diagnostic
   # Write ruby code that returns true if every entry in the
   # list of numbers are even
   def every_even(numbers)
-    # Your code goes here
+    numbers.each.even?
   end
 
   # Question 5
@@ -43,6 +43,7 @@ class Diagnostic
   # replacing the trailing newline character with a
   # space and return the result.
   def read_file(filename)
-    # Your code goes here
+  result = File.open(ARGV[0]) do |file|
+    file.each_with_index do |line, i|
+    puts "#{i}:#{line}"
   end
-end
