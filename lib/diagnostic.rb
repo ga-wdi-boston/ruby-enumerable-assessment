@@ -5,7 +5,7 @@ class Diagnostic
   # Assume each entry in the list implements a length method that returns
   # a Fixnum.
   def longest(list)
-    # Your code goes here
+    @longest = list.max_by{|list| list.length}
   end
 
   # Question 2
