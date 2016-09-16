@@ -5,7 +5,7 @@ class Diagnostic
   # Assume each entry in the list implements a length method that returns
   # a Fixnum.
   def longest(list)
-    list.max
+    list.max_by(&:length)
   end
 
   # Question 2
@@ -34,7 +34,7 @@ class Diagnostic
   # Write ruby code that returns an array with all of the
   # entries from the list of words capitalized (i.e. 'foo' becomes 'Foo').
   def transform(words)
-    # Your code goes here
+    words.each(&:capitalize!)
   end
 
   # Question 6
