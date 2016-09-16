@@ -5,7 +5,7 @@ class Diagnostic
   # Assume each entry in the list implements a length method that returns
   # a Fixnum.
   def longest(list)
-    @longest = list.max_by{|list| list.length}
+    @longest_word = list.max_by{|list| list.length}
   end
 
   # Question 2
@@ -13,7 +13,7 @@ class Diagnostic
   # list supplied (i.e. apply the `+` operator).
   # Assume each entry implements a `+` method.
   def sum(list)
-    # Your code goes here
+    @sum_list = list.reduce(:+)
   end
 
   # Question 3
