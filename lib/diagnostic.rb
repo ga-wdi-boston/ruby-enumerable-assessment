@@ -43,6 +43,21 @@ class Diagnostic
   # replacing the trailing newline character with a
   # space and return the result.
   def read_file(filename)
-    # Your code goes here
+    string = ''
+    File.open(filename) do |file|
+      file.each do |line|
+        line.replace('\n', ' ')
+        string += line
+      end
+    end
+    string
   end
+
+  # File.open(input_file) do |file|
+  #   word_count = 0
+  #   file.each do |line|
+  #     word_count += line.split.length
+  #   end
+  #   puts "Word count: #{word_count}"
+  # end
 end
