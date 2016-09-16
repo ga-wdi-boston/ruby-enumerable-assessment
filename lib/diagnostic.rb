@@ -20,7 +20,7 @@ class Diagnostic
   # Write ruby code that returns true if some of the entries
   # in the list of numbers are odd
   def some_odd(numbers)
-    # Your code goes here
+    @any_odd = numbers.any? {|numbers| numbers == odd?}
   end
 
   # Question 4
