@@ -44,6 +44,8 @@ class Diagnostic
   # replacing the trailing newline character with a
   # space and return the result.
   def read_file(filename)
+    File.open(filename) { |f|
+    result = f.readlines.rstrip }
     
   end
 end
