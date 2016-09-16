@@ -34,7 +34,7 @@ class Diagnostic
   # Write ruby code that returns an array with all of the
   # entries from the list of words capitalized (i.e. 'foo' becomes 'Foo').
   def transform(words)
-    # Your code goes here
+    @cap_words = words.each do {|words| words.capitalize!}
   end
 
   # Question 6
@@ -43,6 +43,6 @@ class Diagnostic
   # replacing the trailing newline character with a
   # space and return the result.
   def read_file(filename)
-    # Your code goes here
+    
   end
 end
