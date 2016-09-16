@@ -47,7 +47,7 @@ class Diagnostic
     str = []
     File.open(filename) do |file|
       file.each do |line|
-        str << line.tr!("\n/", ' ')
+        str << line.tr("\n/", ' ')
       end
     end
     str.join.strip
