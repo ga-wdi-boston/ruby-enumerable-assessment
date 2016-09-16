@@ -13,28 +13,28 @@ class Diagnostic
   # list supplied (i.e. apply the `+` operator).
   # Assume each entry implements a `+` method.
   def sum(list)
-    # Your code goes here
+    # foreach( |list| += list)
   end
 
   # Question 3
   # Write ruby code that returns true if some of the entries
   # in the list of numbers are odd
   def some_odd(numbers)
-    # Your code goes here
+    # (|numbers|.odd?).any?
   end
 
   # Question 4
   # Write ruby code that returns true if every entry in the
   # list of numbers are even
   def every_even(numbers)
-    # Your code goes here
+    # (|numbers|.even?).all?
   end
 
   # Question 5
   # Write ruby code that returns an array with all of the
   # entries from the list of words capitalized (i.e. 'foo' becomes 'Foo').
   def transform(words)
-    # Your code goes here
+    # (|words|.capitalize)
   end
 
   # Question 6
