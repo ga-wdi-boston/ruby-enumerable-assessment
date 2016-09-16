@@ -13,28 +13,34 @@ class Diagnostic
   # list supplied (i.e. apply the `+` operator).
   # Assume each entry implements a `+` method.
   def sum(list)
-    # Your code goes here
+    sum = 0
+    list.each { |l| sum += l }
   end
 
   # Question 3
   # Write ruby code that returns true if some of the entries
   # in the list of numbers are odd
   def some_odd(numbers)
-    # Your code goes here
+    [5, 4, 3].any? { |numbers| numbers.odd? }
+    #=> true
   end
 
   # Question 4
   # Write ruby code that returns true if every entry in the
   # list of numbers are even
   def every_even(numbers)
-    # Your code goes here
+    [10, 4, 6].all? { |numbers| numbers.even? }
+    #=> true
   end
 
   # Question 5
   # Write ruby code that returns an array with all of the
   # entries from the list of words capitalized (i.e. 'foo' becomes 'Foo').
   def transform(words)
-    # Your code goes here
+    nocaps = [foo, merp, merpy].collect do |words|
+    letters = words.split('')
+    letters.first.upcase!
+    letters.join
   end
 
   # Question 6
@@ -43,6 +49,9 @@ class Diagnostic
   # replacing the trailing newline character with a
   # space and return the result.
   def read_file(filename)
-    # Your code goes here
+    File.open(filename) do |file|
+      count = 0
+      file.each do |line|
+        join.each { |line| puts. '\n'.s.replace('') }
   end
 end
