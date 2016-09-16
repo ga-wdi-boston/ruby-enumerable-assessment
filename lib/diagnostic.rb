@@ -48,3 +48,27 @@ class Diagnostic
         puts "#{i}: #{line}"
       end
     end
+
+
+# possible answers
+    def read_file(filename)
+    str = []
+    File.open(filename) do |file|
+      file.each do |line|
+        str << line.tr("\n/", ' ')
+      end
+    end
+    str.join.strip
+  end
+end
+
+def read_file(filename)
+    str = []
+    File.open(filename) do |file|
+      file.each do |line|
+        str << line.chomp
+      end
+    end
+    str.join
+  end
+end
