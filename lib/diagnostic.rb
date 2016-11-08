@@ -8,6 +8,7 @@ class Diagnostic
   # a Fixnum.
   def longest(list)
     # Your code goes here
+    list.max { |a, b| a.length <=> b.length }
   end
 
   # Question 2
@@ -16,6 +17,7 @@ class Diagnostic
   # Assume each entry implements a `+` method.
   def sum(list)
     # Your code goes here
+    list.reduce(&:+)
   end
 
   # Question 3
@@ -23,6 +25,7 @@ class Diagnostic
   # in the list of numbers are odd
   def some_odd(numbers)
     # Your code goes here
+    numbers.any?(&:odd?)
   end
 
   # Question 4
@@ -30,6 +33,7 @@ class Diagnostic
   # list of numbers are even
   def every_even(numbers)
     # Your code goes here
+    numbers.all?(&:even?)
   end
 
   # Question 5
@@ -37,6 +41,7 @@ class Diagnostic
   # entries from the list of words capitalized (i.e. 'foo' becomes 'Foo').
   def transform(words)
     # Your code goes here
+    words.map(&:capitalize)
   end
 
   # Question 6 (optional)
@@ -47,5 +52,9 @@ class Diagnostic
   # space and return the result.
   def read_file(filename)
     # Your code goes here
+    File.open(filename).reduce(String.new) { |a, e| a << e.chomp + ' ' }.strip
+    # File.open(filename).each_with_object('') do |line, memo|
+    #   memo << line.chomp + ' '
+    # end.strip
   end
 end
