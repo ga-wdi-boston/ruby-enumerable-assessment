@@ -94,11 +94,11 @@ declare the causes which impel them to the separation.
   end
 
   context 'read_file' do
-    it 'returns CUSA preamble for `data/cusa-preamble.txt`' do
+    xit 'returns CUSA preamble for `data/cusa-preamble.txt`' do
       expect(@response.read_file('data/cusa-preamble.txt')).to\
         eq(cusa_preamble.tr("\n", ' ').chop)
     end
-    it 'returns DOI preamble for `data/doi-preamble.txt`' do
+    xit 'returns DOI preamble for `data/doi-preamble.txt`' do
       expect(@response.read_file('data/doi-preamble.txt')).to\
         eq(doi_preamble.tr("\n", ' ').chop)
     end

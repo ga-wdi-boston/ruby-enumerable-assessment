@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Ruby enumerable diagnostic
 class Diagnostic
   # Question 1
@@ -37,7 +39,8 @@ class Diagnostic
     # Your code goes here
   end
 
-  # Question 6
+  # Question 6 (optional)
+  # Change `xit` to `it` in `diagnostic_spec.rb` to test this method
   # Write ruby code to read each line from the file
   # named filename. Concatenate the lines together after
   # replacing the trailing newline character with a

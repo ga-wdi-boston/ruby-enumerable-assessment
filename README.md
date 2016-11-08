@@ -4,9 +4,12 @@
 
 ## Prerequisites
 
--   [ga-wdi-boston/ruby-enumerable-builtins](https://github.com/ga-wdi-boston/ruby-enumerable-builtins)
--   [ga-wdi-boston/ruby-enumerable-io](https://github.com/ga-wdi-boston/ruby-enumerable-io)
--   [ga-wdi-boston/ruby-enumerable-custom](https://github.com/ga-wdi-boston/ruby-enumerable-custom)
+-   [Ruby Enumerable Built
+    Ins](https://github.com/ga-wdi-boston/ruby-enumerable-builtins)
+-   [Ruby Enumerable and
+    Comparable](https://github.com/ga-wdi-boston/ruby-enumerable-custom)
+-   [Ruby Enumerable
+    IO](https://github.com/ga-wdi-boston/ruby-enumerable-io) (optional)
 
 ## Instructions
 
@@ -14,8 +17,8 @@
 1.  Change into the new directory.
 1.  Install dependencies with `bundle install`.
 1.  Create and checkout a new branch, named `response`.
-1.  Follow the directions given in [diagnostic.rb](diagnostic.rb).
-1.  Before the alotted time is up, push to your fork and issue a pull request.
+1.  Follow the directions given in [lib/diagnostic.rb](lib/diagnostic.rb).
+1.  Before the allotted time is up, push to your fork and issue a pull request.
 
 Your pull request description should contain a "fist to five" for comfort and
 clarity. Additionally, you should mention the resources you used to help you
@@ -33,20 +36,25 @@ and other [FAQs](https://github.com/ga-wdi-boston/meta/wiki/) related to
 [forking, cloning](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone),
 and [pull requests](https://github.com/ga-wdi-boston/meta/wiki/PullRequest).
 
-Follow the prompts in `lib/diagnostic.rb` and complete each question.
-You may use any resource, other than someone else in the classroom, to help you
- complete this diagnostic.
-
 You may use **any resource** other than each other to complete this diagnostic.
 This includes referencing talk materials, appropriate documentation, and
- searching for help online.
+searching for help online.
 
 **Unless explicitly disallowed**, you may use any method or feature ruby
 provides to complete the prompts.
 
-Check your answers by running `rake test`. Ensure you are lint-free, as well.
+Check your answers by running `bin/rake test`. Ensure your code is lint-free by
+running `bin/rake nag`.
 
 When you are done, commit, push your changes, and submit a pull request.
+
+## Tasks
+
+Developers should run these often!
+
+-   `bin/rake nag` (or `bundle exec rake nag`):
+    runs code quality analysis tools on your code and complains.
+-   `bin/rake test` (or `bundle exec rake test`): runs automated tests.
 
 ## [License](LICENSE)
 
