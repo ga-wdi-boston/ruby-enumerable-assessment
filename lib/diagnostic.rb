@@ -7,13 +7,7 @@ class Diagnostic
   # Assume each entry in the list implements a length method that returns
   # a Fixnum.
   def longest(list)
-    list.reduce { |prev, curr|
-      if prev.length > curr.length
-        return prev
-      else
-        return curr
-      end
-    }
+    list.max { |a, b| a.length <=> b.length }
   end
 
   # Question 2
@@ -28,21 +22,21 @@ class Diagnostic
   # Write ruby code that returns true if some of the entries
   # in the list of numbers are odd
   def some_odd(numbers)
-    numbers.any? { |one| one.odd? }
+    numbers.any?(&:odd?)
   end
 
   # Question 4
   # Write ruby code that returns true if every entry in the
   # list of numbers are even
   def every_even(numbers)
-    numbers.all? { |one| one.even? }
+    numbers.all?(&:even?)
   end
 
   # Question 5
   # Write ruby code that returns an array with all of the
   # entries from the list of words capitalized (i.e. 'foo' becomes 'Foo').
   def transform(words)
-    words.map {|word| word.capitalize }
+    words.map(&:capitalize)
   end
 
   # Question 6 (optional)
