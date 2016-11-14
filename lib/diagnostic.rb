@@ -8,7 +8,7 @@ class Diagnostic
   # a Fixnum.
   def longest(list)
     let longest_entry = list.max_by(&:length)
-  end
+
     # Your code goes here
   end
 
@@ -26,7 +26,7 @@ class Diagnostic
   def some_odd(numbers)
     if odds = numbers.select(&:odd?)
       true
-  end
+    end
 
   # Question 4
   # Write ruby code that returns true if every entry in the
@@ -34,6 +34,7 @@ class Diagnostic
   def every_even(numbers)
     if evens = numbers.select(&:evens?)
       true
+    end
   end
 
   # Question 5
