@@ -94,7 +94,7 @@ declare the causes which impel them to the separation.
   end
 
   context 'read_file' do
-    xit 'returns CUSA preamble for `data/cusa-preamble.txt`' do
+    it 'returns CUSA preamble for `data/cusa-preamble.txt`' do
       expect(@response.read_file('data/cusa-preamble.txt')).to\
         eq(cusa_preamble.tr("\n", ' ').chop)
     end
