@@ -7,29 +7,52 @@ class Diagnostic
   # Assume each entry in the list implements a length method that returns
   # a Fixnum.
   def longest(list)
-    # Your code goes here
-  end
+
+  include Comparable
+
+    def <=>(list)
+      [RANKS.index(rank), SUITS.index(suit)] <=>
+        [RANKS.index(other.rank), SUITS.index(other.suit)]
+
+
+  #   include Enumerable
+  #
+  #   def each
+  #     @list = list
+  #     current_list_item = 0
+  #
+  #     while current_list_item < list.length
+  #
+  #       if current_list_item[i] < current_list_item[i+1]
+  #         yield current_list_item
+  #         current_list_item += 1
+  #       end
+  #     end
+  # end
 
   # Question 2
   # Write ruby code to return the sum of entries in the
   # list supplied (i.e. apply the `+` operator).
   # Assume each entry implements a `+` method.
   def sum(list)
-    # Your code goes here
+    list.reduce(:+)
   end
 
   # Question 3
   # Write ruby code that returns true if some of the entries
   # in the list of numbers are odd
   def some_odd(numbers)
-    # Your code goes here
+    numbers.any? {|num| num.even}
   end
 
   # Question 4
   # Write ruby code that returns true if every entry in the
   # list of numbers are even
   def every_even(numbers)
-    # Your code goes here
+    numbers_set
+    numbers_set.each { |numbers_set, i|
+      numbers % 2 == 0
+    }
   end
 
   # Question 5
@@ -45,7 +68,17 @@ class Diagnostic
   # named filename. Concatenate the lines together after
   # replacing the trailing newline character with a
   # space and return the result.
+  # ran out of time#
   def read_file(filename)
-    # Your code goes here
-  end
-end
+    raise 'Usage: ruby bin/filename.rb <input_file>' if ARGV.empty?
+
+    input_file = ARGV[0]
+
+    File.open(input_file) do |file|
+      file.each_with_index do |line, i|
+        "#{i}: #{line}"
+
+      end
+    end
+      end
+    end
